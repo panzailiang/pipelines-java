@@ -13,14 +13,14 @@ pool:
 stages:
 - stage: build
   jobs:
-  - job: 'job a'
+  - job: job_a
     steps:
     - bash: echo "step a"
       displayName: 'run echo1'
     - bash: echo "step b"
 - stage: test
   jobs: 
-  - job: "test one"
+  - job: job_b
     steps:
     - script: echo Hello, world!
       displayName: 'Run a one-line script'
