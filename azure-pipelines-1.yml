@@ -17,7 +17,11 @@ stages:
     steps:
     - bash: echo "step a"
       displayName: 'run echo1'
-    - bash: echo "step b"
+    - bash: echo "step b" > "$(Build.ArtifactStagingDirectory)/aa.txt"
+    - task: PublishBuildArtifacts@1
+      inputs:
+        PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+        ArtifactName: 'ar1'
 - stage: test
   jobs: 
   - job: job_b
