@@ -15,7 +15,9 @@ stages:
   jobs:
   - job: job_a
     steps:
-    - bash: echo "step a"
+    - bash: |
+         sleep 5
+         echo "step a"
       displayName: 'run echo1'
     - bash: echo "step b" > "$(Build.ArtifactStagingDirectory)/aa.txt"
     - task: PublishBuildArtifacts@1
