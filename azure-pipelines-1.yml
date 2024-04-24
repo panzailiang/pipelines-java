@@ -13,12 +13,12 @@ pool:
 stages:
 - stage: build
   jobs:
-  - job: job_a
+  - job: job_with_long_long_long_long_name
     steps:
     - bash: |
          sleep 5
          echo "step a"
-      displayName: 'run echo1'
+      displayName: 'run echo1 with long long long long long long name'
     - bash: echo "step b" > "$(Build.ArtifactStagingDirectory)/aa.txt"
     - task: PublishBuildArtifacts@1
       inputs:
