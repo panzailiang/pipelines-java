@@ -19,10 +19,14 @@ stages:
          sleep 5
          echo "step a"
       displayName: 'run echo1 with long long long long long long name long name long name long name long name'
-    - bash: echo "step b" > "$(Build.ArtifactStagingDirectory)/aa.txt"
+    - bash: |
+        mkdir arts
+        echo "aa" > ./arts/aa.txt
+        echo "bb" > ./arts/bb.txt
     - task: PublishBuildArtifacts@1
       inputs:
-        PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+
+        PathtoPublish: ./arts
         ArtifactName: 'ar1'
 - stage: test
   jobs: 
