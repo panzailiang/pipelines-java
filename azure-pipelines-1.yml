@@ -23,7 +23,7 @@ stages:
         mkdir arts
         echo "aa" > ./arts/aa.txt
         echo "bb" > ./arts/bb.txt
-        ehco "cc" > ./cc.txt
+        echo "cc" > ./cc.txt
     - task: PublishBuildArtifacts@1
       inputs:
         PathtoPublish: ./arts
