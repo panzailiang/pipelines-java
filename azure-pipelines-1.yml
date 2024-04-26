@@ -23,11 +23,15 @@ stages:
         mkdir arts
         echo "aa" > ./arts/aa.txt
         echo "bb" > ./arts/bb.txt
+        ehco "cc" > ./cc.txt
     - task: PublishBuildArtifacts@1
       inputs:
-
         PathtoPublish: ./arts
         ArtifactName: 'ar1'
+    - task: PublishBuildArtifacts@1
+      inputs:
+        PathtoPublish: ./cc.txt
+        ArtifactName: 'ar2'
 - stage: test
   jobs: 
   - job: job_b
