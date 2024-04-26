@@ -24,6 +24,7 @@ stages:
         mkdir arts/sub
         echo "aa" > ./arts/aa.txt
         echo "bb" > ./arts/bb.txt
+        head -c 10 < /dev/urandom > xx
         echo "dd" > ./arts/sub/dd.txt
         echo "cc" > ./cc.txt
     - task: PublishBuildArtifacts@1
