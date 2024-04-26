@@ -21,8 +21,10 @@ stages:
       displayName: 'run echo1 with long long long long long long name long name long name long name long name'
     - bash: |
         mkdir arts
+        mkdir arts/sub
         echo "aa" > ./arts/aa.txt
         echo "bb" > ./arts/bb.txt
+        echo "dd" > ./arts/sub/dd.txt
         echo "cc" > ./cc.txt
     - task: PublishBuildArtifacts@1
       inputs:
